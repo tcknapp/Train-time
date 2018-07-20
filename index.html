@@ -1,21 +1,93 @@
-basic html template
-
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Train Time</title>
+
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/style.css">
+        <!--Firebase-->
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     </head>
 
     <body>
 
+        <div class="jumbotron">
+            <h1 class="text-center">Train Time</h1>
+        </div>
+        
+        <!--For upcoming Train Table-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Updated Train Schedule</h2>                   
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Train</th>
+                                        <th>Destination</th>
+                                        <th>Frequency (min)</th>
+                                        <th>Next Arrival</th>
+                                        <th>Minutes Away</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--Form for trains-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Add Train</h2>
+                        </div>
+                        <div class="panel-body">
+                            <form>
+                                    <div class="form-group"> 
+                                        <label for="traineName">Train Name</label>
+                                        <input type="text" class="form-control" id="trainName">
+                                    </div>
+                                    <div class="form-group"> 
+                                        <label for="destination">Destination</label>
+                                        <input type="text" class="form-control" id="destination">
+                                    </div>	
+                                    <div class="form-group">
+                                        <label for="firstTrainTime">First Train Time (00:00 - military time)</label>
+                                        <input type="text" class="form-control" id="firstTrainTime">
+                                    </div>	
+                                    <div class="form-group"> 
+                                        <label for="frequency">Frequency (min)</label>
+                                        <input type="text" class="form-control" id="frequency">
+                                    </div>	
+                                    <button id="submit" type="submit" class="btn btn-info">Submit</button>
+                                </form>
+            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
         
+
+
+
+
         <!--JS/jQ-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src= app.js></script>
+        <script src="app.js"></script>
+
 
         <!--moment-->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
