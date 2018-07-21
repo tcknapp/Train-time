@@ -10,16 +10,21 @@
         <link rel="stylesheet" href="assets/style.css">
         <!--Firebase-->
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <!--moment-->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+   
     </head>
 
     <body>
 
-        <div class="jumbotron">
-            <h1 class="text-center">Train Time</h1>
-        </div>
-        
-        <!--For upcoming Train Table-->
         <div class="container">
+
+            <div class="jumbotron">
+                <h1 class="text-center">Train Time</h1>
+            </div>
+            
+            <!--For upcoming Train Table-->
+            
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-info">
@@ -27,7 +32,7 @@
                             <h2 class="panel-title">Updated Train Schedule</h2>                   
                         </div>
                         <div class="panel-body">
-                            <table class="table">
+                            <table class="table" id="trainTable">
                                 <thead>
                                     <tr>
                                         <th>Train</th>
@@ -37,12 +42,16 @@
                                         <th>Minutes Away</th>
                                     </tr>
                                 </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-        <!--Form for trains-->
+            
+            <!--Form for trains-->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-info">
@@ -53,24 +62,24 @@
                             <form>
                                     <div class="form-group"> 
                                         <label for="traineName">Train Name</label>
-                                        <input type="text" class="form-control" id="trainName">
+                                        <input type="text" class="form-control" id="trainNameInput">
                                     </div>
                                     <div class="form-group"> 
                                         <label for="destination">Destination</label>
-                                        <input type="text" class="form-control" id="destination">
+                                        <input type="text" class="form-control" id="destInput">
                                     </div>	
                                     <div class="form-group">
                                         <label for="firstTrainTime">First Train Time (00:00 - military time)</label>
-                                        <input type="text" class="form-control" id="firstTrainTime">
+                                        <input type="text" class="form-control" id="firstTrainInput">
                                     </div>	
                                     <div class="form-group"> 
                                         <label for="frequency">Frequency (min)</label>
-                                        <input type="text" class="form-control" id="frequency">
+                                        <input type="text" class="form-control" id="freqInput">
                                     </div>	
-                                    <button id="submit" type="submit" class="btn btn-info">Submit</button>
+                                    <button type="submit" class="btn btn-info" id="addTrainBtn">Submit</button>
                                 </form>
             
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -78,23 +87,13 @@
 
         </div>
 
-
         
-
-
-
 
         <!--JS/jQ-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="app.js"></script>
 
 
-        <!--moment-->
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
     </body>
-
-
-
 
 </html>
