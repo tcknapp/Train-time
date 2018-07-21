@@ -13,7 +13,7 @@ var config = {
 
     var database = firebase.database();
 
-
+//add new train button
     $("#addTrainBtn").on("click", function(){
         
         var trainName = $('#trainNameInput').val().trim();
@@ -21,7 +21,7 @@ var config = {
         var firstTrain = $('#firstTrainInput').val().trim();
         var frequency = $('#freqInput').val().trim();
         
-
+        //new train object
         var newTrain = {
             name: trainName,
             dest : destination,
@@ -48,21 +48,11 @@ var config = {
         var firstTrain = childSnapshot.val().first;
         var frequency = childSnapshot.val().freq;
     
-        // Train info
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrain);
-        console.log(frequency);
-
-        
-    // Assumptions
-    var tFrequency = 1; 
-
-    // Time is 3:30 AM
-    var firstTime = 0;
+    
+    // MOMENT JS
 
     // First Time (pushed back 1 year to make sure it comes before current time)
-    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+    var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
     console.log(firstTimeConverted);
 
     // Current Time
@@ -74,15 +64,15 @@ var config = {
     console.log("DIFFERENCE IN TIME: " + diffTime);
 
     // Time apart (remainder)
-    var tRemainder = diffTime % tFrequency;
+    var tRemainder = diffTime % frequency;
     console.log(tRemainder);
 
     // Minute Until Train
-    var tMinutesTillTrain = tFrequency - tRemainder;
+    var tMinutesTillTrain = frequency - tRemainder;
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
     // Next Train
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
   
     $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + destination  + "</td><td>" + frequency + "</td><td>" + nextTrain + "</td><td>" + tMinutesTillTrain + "</td></tr>");
