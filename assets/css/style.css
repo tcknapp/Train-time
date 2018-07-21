@@ -1,0 +1,16 @@
+.jumbotron {
+    background-image: url("../images/tomtank.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+    text-shadow: 4px 4px 8px #000000;
+}
+
+
+.panel-title {
+    text-align: center;
+}
+
+#addTrainBtn {
+    margin: 0 auto;
+}
