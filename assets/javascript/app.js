@@ -1,5 +1,5 @@
 
-//Firebase ver
+//Firebase intilization
 
 var config = {
         apiKey: "AIzaSyCxPsBIThIwPZGKlBPuiPZaF_CqsfcQmHs",
