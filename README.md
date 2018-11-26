@@ -23,4 +23,11 @@ In this assignment, you'll create a train schedule application that incorporates
   * Users from many different machines must be able to view same train times.
   
   * Styling and theme are completely up to you. Get Creative!
+  
+  
+  - - -
+  ### Technologies Used
+  * Firebase
+  * Moment.js
+  * Bootstrap
 
