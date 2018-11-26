@@ -26,7 +26,7 @@ In this assignment, you'll create a train schedule application that incorporates
   
   
   - - -
-  ### Technologies Used
+  ## Technologies Used
   * Firebase
   * Moment.js
   * Bootstrap
